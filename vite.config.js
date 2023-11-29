@@ -7,6 +7,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   resolve: {
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      emptyOutDir: true,
+    },
     alias: {
       // eslint-disable-next-line no-undef
       '@': path.resolve(__dirname, './src'),
