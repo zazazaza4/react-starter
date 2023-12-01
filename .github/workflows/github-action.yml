@@ -1,5 +1,5 @@
 name: CI
-
+run-name: ${{ github.actor }} Pipeline PROCESSING 🚀
 on:
   push:
     branches:
@@ -17,6 +17,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+      
+      - name: Lint
+        run: npm run lint:js && npm run lint:css
+
+      - name: Fix linting issues
+        run: npm run lint:fix
+
+      - name: Prettier
+        run: npm run prettier
+      
+      - name: Test
+        run: npm test
 
       - name: Install dependencies
         run: npm install
@@ -24,14 +36,5 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test
-        run: npm test
+
       
-      - name: Lint
-        run: npm run lint
-
-      - name: Fix linting issues
-        run: npm run lint:fix
-
-      - name: Prettier
-        run: npm run prettier
