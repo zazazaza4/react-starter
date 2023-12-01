@@ -24,9 +24,6 @@ jobs:
       - name: Lint
         run: npm run lint:js && npm run lint:css
 
-      - name: Fix linting issues
-        run: npm run lint-staged
-
       - name: Prettier
         run: npm run prettier
       
