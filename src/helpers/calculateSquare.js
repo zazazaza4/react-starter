@@ -1,3 +1,3 @@
 export const calculateSquare = (number) => {
-    return number * number;
+  return number * number;
 };
