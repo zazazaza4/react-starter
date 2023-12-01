@@ -19,7 +19,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       
       - name: Lint
         run: npm run lint:js && npm run lint:css
